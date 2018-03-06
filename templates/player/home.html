@@ -1,13 +1,5 @@
-{% load staticfiles %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link href="{% static 'player/style.css' %}" rel="stylesheet"/>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <h1>Welcome, {{user.username}}</h1>
     These are your active games:
 
@@ -16,5 +8,4 @@
         <li>Game {{game.id}}: {{game.first_player}} vs {{game.second_player}}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
